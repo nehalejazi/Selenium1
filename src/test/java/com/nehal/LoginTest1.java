@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTest1 {
 	
-	@Parameters("Browser")
+	//@Parameters("Browser")
 	@Test
 	public void login1(String browserlocal)
 	{
@@ -21,7 +21,7 @@ public class LoginTest1 {
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		String title = driver.getTitle();
 		System.out.println(title);
-		System.out.println("Paramere testing: "+browserlocal);
+		//System.out.println("Paramere testing: "+browserlocal);
 		driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("Admin");
 		driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("admin123");
 		driver.findElement(By.xpath("//input[@id='btnLogin']")).click();
