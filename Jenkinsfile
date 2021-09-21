@@ -1,20 +1,26 @@
 pipeline {
     agent any
 
+    tools {
+       
+        maven "MAVEN_HOME"
+    }
+
     stages {
-        stage('Build 1') {
+        stage('Build') {
             steps {
-                echo 'Hello World Build 1'
+                
+                git 'https://github.com/nehalejazi/Selenium1.git'
+                
+                bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-        }
-        stage('Test 1') {
-            steps {
-                echo 'Hello World Test 1'
-            }
-        }
-        stage('Deploy 1') {
-            steps {
-                echo 'Hello World Deploy 1'
+
+            post {
+                
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
     }
