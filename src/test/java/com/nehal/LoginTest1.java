@@ -12,7 +12,7 @@ public class LoginTest1 {
 	
 	//@Parameters("Browser")
 	@Test
-	public void login1(String browserlocal)
+	public void login1()
 	{
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
