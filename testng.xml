@@ -6,6 +6,7 @@
       <class name="com.nehal.LoginTest1"/>
       <class name="com.nehal.AppTest1"/>
       
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
