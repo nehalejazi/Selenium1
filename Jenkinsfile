@@ -13,7 +13,7 @@ pipeline {
                // git 'https://github.com/nehalejazi/Selenium1.git'
                 
                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-                bat "clean test "
+                bat "mvn clean test "
             }
 
             post {
