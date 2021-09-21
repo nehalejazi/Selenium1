@@ -10,16 +10,18 @@ pipeline {
         stage('Build') {
             steps {
                 
-                git 'https://github.com/nehalejazi/Selenium1.git'
+               // git 'https://github.com/nehalejazi/Selenium1.git'
                 
-                bat "mvn -Dmaven.test.failure.ignore=true clean package"
+               // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                bat "clean test -DBrowser=$Browser"
             }
 
             post {
                 
                 success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                   // junit '**/target/surefire-reports/TEST-*.xml'
+                   // archiveArtifacts 'target/*.jar'
+                    echo "Got teh success"
                 }
             }
         }
